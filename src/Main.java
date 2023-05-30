@@ -1,4 +1,5 @@
 import arrays.*;
+import linkedlists.*;
 import projects.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
@@ -7,6 +8,7 @@ import projects.*;
 */
 class Main {
   public static void main(String[] args) {
-    SumDiagonalElements_44.Test_Sum();
+    SinglyLinkedList SLL = new SinglyLinkedList(300);
+    System.out.println(SLL.head.value);
   }
 }
