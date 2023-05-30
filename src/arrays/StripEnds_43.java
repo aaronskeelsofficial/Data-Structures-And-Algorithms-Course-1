@@ -6,14 +6,14 @@ import java.util.Arrays;
 * @author aaronskeels.work/
 * @version 1.0.0
 */
-public class StripEnds {
+public class StripEnds_43 {
   int[] array;
   
   /** Constructor
   * @version 1.0.0
   * @since 1.0.0
   */
-  public StripEnds(int[] array) {
+  public StripEnds_43(int[] array) {
     this.array = array;
   }
 
@@ -46,8 +46,8 @@ public class StripEnds {
   *  --------------------------------------------------
   */
   public static void Test_Strip() {
-    StripEnds se1 = new StripEnds(new int[] {1,2,3,4,5});
-    StripEnds se2 = new StripEnds(new int[] {1});
+    StripEnds_43 se1 = new StripEnds_43(new int[] {1,2,3,4,5});
+    StripEnds_43 se2 = new StripEnds_43(new int[] {1});
     System.out.println(Arrays.toString(se1.Strip()));
     System.out.println(Arrays.toString(se2.Strip()));
   }

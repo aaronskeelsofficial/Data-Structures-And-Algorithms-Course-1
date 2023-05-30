@@ -7,6 +7,6 @@ import projects.*;
 */
 class Main {
   public static void main(String[] args) {
-    StripEnds.Test_Strip();
+    StripEnds_43.Test_Strip();
   }
 }
