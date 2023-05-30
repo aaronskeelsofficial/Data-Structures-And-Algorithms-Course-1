@@ -1,19 +1,19 @@
 package linkedlists;
 
-/** Represents a singly linked list implementation
+/** Represents a doubly linked list implementation
 * @author Aaron Skeels
 * @author aaronskeels.work/
 * @version 1.0.0
 */
-public class CircularSinglyLinkedList {
-  public SLLNode head, tail;
+public class DoublyLinkedList {
+  public DLLNode head, tail;
   public int size;
   
   /** Constructor
   * @version 1.0.0
   * @since 1.0.0
   */
-  public CircularSinglyLinkedList() { // ------------------------------------------------------------------ O(1)
+  public DoublyLinkedList() { // -------------------------------------------------------------------------- O(1)
     size = 0; // ------------------------------------------------------------------------------------------ O(1)
   }
 
@@ -22,16 +22,16 @@ public class CircularSinglyLinkedList {
   * @since 1.0.0
   * @param nodeValue Value to set first node to
   */
-  public CircularSinglyLinkedList(int nodeValue) { // ----------------------------------------------------- O(1)
+  public DoublyLinkedList(int nodeValue) { // ------------------------------------------------------------- O(1)
     initializeLinkedList(nodeValue);
   }
 
-  /** Deletes an index from a circular singly linked list
+  /** Deletes an index from a singly linked list
   * @version 1.0.0
   * @since 1.0.0
   * @param index Index to be deleted
   */
-  public void delete(int index) { // ---------------------------------------------------------------------- O(n)
+  public void delete(int index) { // ------------------------------------------------------------------------ O(n)
     //Error handling
     if (index > size) {
       System.out.println("Linked List index " + index + " is out of bounds!");
@@ -43,11 +43,12 @@ public class CircularSinglyLinkedList {
     }
 
     //Delete node
-    SLLNode nodeToLeft = null, nodeToDelete = head, nodeToRight = null;
+    DLLNode nodeToLeft = null, nodeToDelete = head, nodeToRight = null;
     if (index == 0) { // Is head
       head = nodeToDelete.next; //Pray garbage collection cleans old head
+      head.prev = null;
     } else if (index == size-1) { // Is tail
-      for (int i = 0;i < index;i++) { // ------------------------------------------------------------------ O(n)
+      for (int i = 0;i < index;i++) { // ------------------------------------------------------------------- O(n)
         nodeToLeft = nodeToDelete;
         nodeToDelete = nodeToDelete.next;
       }
@@ -60,11 +61,12 @@ public class CircularSinglyLinkedList {
       }
       nodeToRight = nodeToDelete.next;
       nodeToLeft.next = nodeToRight; //Pray garbage collection cleans deleted node
+      nodeToRight.prev = nodeToLeft;
     }
     size--;
   }
 
-  /** Deletes entire circular singly linked list
+  /** Deletes entire singly linked list
   * @version 1.0.0
   * @since 1.0.0
   */
@@ -80,14 +82,13 @@ public class CircularSinglyLinkedList {
   * @param nodeValue Value to set first node to
   */
   public void initializeLinkedList(int nodeValue) { // ---------------------------------------------------- O(1)
-    SLLNode node = new SLLNode(nodeValue, null);
-    node.next = node;
-    head = node;
-    tail = node;
-    size = 1;
+    DLLNode node = new DLLNode(nodeValue, null, null); // ------------------------------------------------- O(1)
+    head = node; // --------------------------------------------------------------------------------------- O(1)
+    tail = node; // --------------------------------------------------------------------------------------- O(1)
+    size = 1; // ------------------------------------------------------------------------------------------ O(1)
   }
 
-  /** Insert a value into the circular linked list
+  /** Insert a value into the linked list
   * @version 1.0.0
   * @since 1.0.0
   * @param nodeValue Value to set the new node to
@@ -111,29 +112,31 @@ public class CircularSinglyLinkedList {
     }
     
     //Insert node expecting already present nodes
-    SLLNode node = new SLLNode(nodeValue, null);
+    DLLNode node = new DLLNode(nodeValue, null, null);
     if (index == 0) { // Is head
       node.next = head;
+      head.prev = node;
       head = node;
-      tail.next = node;
     } else if (index == size) { // Is tail
       tail.next = node;
-      node.next = head;
+      node.prev = tail;
       tail = node;
     } else { // Is in middle
-      SLLNode nodeToLeft = null;
-      SLLNode nodeAtIndex = head;
+      DLLNode nodeToLeft = null;
+      DLLNode nodeAtIndex = head;
       for (int i = 0;i < index;i++) { // ----------------------------------------------------------------- O(index)
         nodeToLeft = nodeAtIndex;
         nodeAtIndex = nodeAtIndex.next;
       }
       nodeToLeft.next = node;
+      node.prev = nodeToLeft;
       node.next = nodeAtIndex;
+      nodeAtIndex.prev = node;
     }
     size++;
   }
 
-  /** Deduce if a value is present anywhere in the circular singly linked list
+  /** Deduce if a value is present anywhere in the singly linked list
   * @version 1.0.0
   * @since 1.0.0
   * @param nodeValue Value to set the new node to
@@ -144,8 +147,8 @@ public class CircularSinglyLinkedList {
     if (size == 0)
       return false;
 
-    SLLNode curNode = head;
-    for (int i = 0;i < size;i++) { // -------------------------------------------------------------------------- O(n)
+    DLLNode curNode = head;
+    while (curNode != null) { // -------------------------------------------------------------------------- O(n)
       if (curNode.value == nodeValue)
         return true;
       curNode = curNode.next;
@@ -153,18 +156,34 @@ public class CircularSinglyLinkedList {
     return false;
   }
   
-  /** Generic toString
+  /** Generic toString method
   * @version 1.0.0
   * @since 1.0.0
-  * @param nodeValue Value to set first node to
   */
   public String toString() { // -------------------------------------------------------------------------- O(n)
     String str = "Size: " + size + " :: ";
-    SLLNode node = head;
+    DLLNode node = head;
     for (int i = 0;i < size;i++) { // -------------------------------------------------------------------- O(n)
       str += node.value + " ";
       node = node.next;
     }
+    return str;
+  }
+
+  /** Deep toString method for more in depth debugging
+  * @version 1.0.0
+  * @since 1.0.0
+  */
+  public String deepToString() {
+    String str = "Size: " + size + "\n";
+    DLLNode node = head;
+    for (int i = 0;i < size;i++) { // -------------------------------------------------------------------- O(n)
+      String prev = (node.prev != null) ? node.prev.value + "" : "null";
+      String next = (node.next != null) ? node.next.value + "" : "null";
+      str += prev + " <- " + node.value + " -> " + next + "\n";
+      node = node.next;
+    }
+    str += "---";
     return str;
   }
 
@@ -179,48 +198,46 @@ public class CircularSinglyLinkedList {
   *  --------------------------------------------------
   */
   public static void Test_Insert() {
-    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(300);
-    cSLL.insert(1,1);
-    cSLL.insert(500,2);
-    System.out.println(cSLL.toString());
-    cSLL.insert(4,2);
-    System.out.println(cSLL.toString());
-    cSLL.insert(42,0);
-    System.out.println(cSLL.toString());
+    DoublyLinkedList lL = new DoublyLinkedList(300);
+    System.out.println(lL.deepToString());
+    lL.insert(4,1);
+    System.out.println(lL.deepToString());
+    lL.insert(42,0);
+    System.out.println(lL.deepToString());
+    lL.insert(6,1);
+    System.out.println(lL.deepToString());
   }
   public static void Test_IsInList() {
-    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(300);
-    cSLL.insert(1,1);
-    cSLL.insert(500,2);
-    cSLL.insert(4,2);
-    System.out.println(cSLL.isInList(42));
-    cSLL.insert(42,0);
-    System.out.println(cSLL.isInList(42));
+    DoublyLinkedList lL = new DoublyLinkedList(300);
+    lL.insert(1,1);
+    lL.insert(500,2);
+    lL.insert(4,2);
+    System.out.println(lL.isInList(42));
+    lL.insert(42,0);
+    System.out.println(lL.isInList(42));
   }
   public static void Test_Delete() {
-    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(0);
-    cSLL.insert(1,1);
-    cSLL.insert(2,2);
-    cSLL.insert(3,3);
-    cSLL.insert(4,4);
-    System.out.println(cSLL.toString());
-    cSLL.delete(0);
-    System.out.println(cSLL.toString());
-    cSLL.delete(cSLL.size-1);
-    System.out.println(cSLL.toString());
-    cSLL.delete(1);
-    System.out.println(cSLL.toString());
-    cSLL.delete(5);
-    System.out.println(cSLL.toString());
+    DoublyLinkedList lL = new DoublyLinkedList(0);
+    lL.insert(1,1);
+    lL.insert(2,2);
+    lL.insert(3,3);
+    lL.insert(4,4);
+    System.out.println(lL.deepToString());
+    lL.delete(0);
+    lL.delete(lL.size-1);
+    System.out.println(lL.deepToString());
+    lL.delete(1);
+    lL.delete(5);
+    System.out.println(lL.deepToString());
   }
   public static void Test_DeleteEntireList() {
-    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(0);
-    cSLL.insert(1,1);
-    cSLL.insert(2,2);
-    cSLL.insert(3,3);
-    cSLL.insert(4,4);
-    System.out.println(cSLL.toString());
-    cSLL.deleteEntireList();
-    System.out.println(cSLL.toString());
+    DoublyLinkedList lL = new DoublyLinkedList(0);
+    lL.insert(1,1);
+    lL.insert(2,2);
+    lL.insert(3,3);
+    lL.insert(4,4);
+    System.out.println(lL.deepToString());
+    lL.deleteEntireList();
+    System.out.println(lL.deepToString());
   }
 }

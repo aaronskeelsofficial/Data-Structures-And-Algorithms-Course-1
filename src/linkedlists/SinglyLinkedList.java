@@ -46,7 +46,7 @@ public class SinglyLinkedList {
     SLLNode nodeToLeft = null, nodeToDelete = head, nodeToRight = null;
     if (index == 0) { // Is head
       head = nodeToDelete.next; //Pray garbage collection cleans old head
-    } else if (index == size) { // Is tail
+    } else if (index == size-1) { // Is tail
       for (int i = 0;i < index;i++) { // ------------------------------------------------------------------- O(n)
         nodeToLeft = nodeToDelete;
         nodeToDelete = nodeToDelete.next;

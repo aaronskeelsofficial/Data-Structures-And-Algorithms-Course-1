@@ -8,12 +8,12 @@ import projects.*;
 */
 class Main {
   public static void main(String[] args) {
-    CircularSinglyLinkedList.Test_Insert();
+    DoublyLinkedList.Test_Insert();
     System.out.println("\n-----------\n");
-    CircularSinglyLinkedList.Test_IsInList();
+    DoublyLinkedList.Test_IsInList();
     System.out.println("\n-----------\n");
-    CircularSinglyLinkedList.Test_Delete();
+    DoublyLinkedList.Test_Delete();
     System.out.println("\n-----------\n");
-    CircularSinglyLinkedList.Test_DeleteEntireList();
+    DoublyLinkedList.Test_DeleteEntireList();
   }
 }
