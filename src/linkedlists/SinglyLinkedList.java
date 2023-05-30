@@ -149,10 +149,9 @@ public class SinglyLinkedList {
     return false;
   }
   
-  /** Generic initialization method
-  * @version 1.0.1
+  /** Generic toString method
+  * @version 1.0.0
   * @since 1.0.1
-  * @param nodeValue Value to set first node to
   */
   public String toString() { // -------------------------------------------------------------------------- O(n)
     String str = "Size: " + size + " :: ";
