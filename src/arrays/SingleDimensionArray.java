@@ -3,7 +3,7 @@ package arrays;
 /** Represents a single dimensional array and all functional implementations
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.3
+* @version 1.0.4
 */
 public class SingleDimensionArray { // ------------------------------------------------------------------- O(n)
   int[] arr = null; // Declaration ----------------------------------------------------------------------- O(1)
@@ -18,6 +18,20 @@ public class SingleDimensionArray { // -----------------------------------------
     arr = new int[sizeOfArray]; // Instantiation --------------------------------------------------------- O(1)
     for (int i = 0; i < sizeOfArray; i++) { // Initialization -------------------------------------------- O(n)
       arr[i] = Integer.MIN_VALUE; // --------------------------------------------------------------------- O(1)
+    }
+  }
+
+  /** Delete a value from the specified index
+  * @param index Index at which to delete value
+  * @version 1.0.0
+  * @since 1.0.4
+  */
+  public void delete(int index) { // --------------------------------------------------------------------- O(1)
+    try { // --------------------------------------------------------------------------------------------- O(1)
+      arr[index] = Integer.MIN_VALUE; // ----------------------------------------------------------------- O(1)
+      System.out.println("Index " + index + " deleted successfully."); // -------------------------------- O(1)
+    } catch (ArrayIndexOutOfBoundsException e) { // ------------------------------------------------------ O(1)
+      System.out.println("Invalid array index: " + index + "."); // -------------------------------------- O(1)
     }
   }
 
@@ -126,5 +140,15 @@ public class SingleDimensionArray { // -----------------------------------------
     sda.insert(3,30);
     sda.searchInArray_Linear(20);
     sda.searchInArray_Linear(40);
+  }
+  public static void Test_Delete() {
+    SingleDimensionArray sda = new SingleDimensionArray(10);
+    sda.insert(0,0);
+    sda.insert(1,10);
+    sda.insert(2,20);
+    sda.insert(3,30);
+    sda.searchInArray_Linear(20);
+    sda.delete(2);
+    sda.searchInArray_Linear(20);
   }
 }
