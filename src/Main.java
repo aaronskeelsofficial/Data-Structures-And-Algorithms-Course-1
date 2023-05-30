@@ -8,6 +8,6 @@ import projects.*;
 */
 class Main {
   public static void main(String[] args) {
-    SinglyLinkedList.Test_IsInList();
+    SinglyLinkedList.Test_DeleteEntireList();
   }
 }

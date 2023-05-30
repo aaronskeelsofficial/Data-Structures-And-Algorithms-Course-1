@@ -3,7 +3,7 @@ package linkedlists;
 /** Represents a singly linked list implementation
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.2
+* @version 1.0.3
 */
 public class SinglyLinkedList {
   public SLLNode head, tail;
@@ -26,6 +26,54 @@ public class SinglyLinkedList {
     initializeLinkedList(nodeValue);
   }
 
+  /** Deletes an index from a singly linked list
+  * @version 1.0.0
+  * @since 1.0.2
+  * @param index Index to be deleted
+  */
+  public void delete(int index) { // ------------------------------------------------------------------------ O(n)
+    //Error handling
+    if (index > size) {
+      System.out.println("Linked List index " + index + " is out of bounds!");
+      return;
+    }
+    if (index < 0) {
+      System.out.println("Linked List index " + index + " must be a positive number!");
+      return;
+    }
+
+    //Delete node
+    SLLNode nodeToLeft = null, nodeToDelete = head, nodeToRight = null;
+    if (index == 0) { // Is head
+      head = nodeToDelete.next; //Pray garbage collection cleans old head
+    } else if (index == size) { // Is tail
+      for (int i = 0;i < index;i++) { // ------------------------------------------------------------------- O(n)
+        nodeToLeft = nodeToDelete;
+        nodeToDelete = nodeToDelete.next;
+      }
+      tail = nodeToLeft;
+      nodeToLeft.next = null;
+    } else { // Is in middle
+      for (int i = 0;i < index;i++) { // ------------------------------------------------------------------- O(n)
+        nodeToLeft = nodeToDelete;
+        nodeToDelete = nodeToDelete.next;
+      }
+      nodeToRight = nodeToDelete.next;
+      nodeToLeft.next = nodeToRight; //Pray garbage collection cleans deleted node
+    }
+    size--;
+  }
+
+  /** Deletes entire singly linked list
+  * @version 1.0.0
+  * @since 1.0.3
+  */
+  public void deleteEntireList() { // --------------------------------------------------------------------- O(1)
+    head = null;
+    tail = null;
+    size = 0;
+  }
+  
   /** Generic initialization method
   * @version 1.0.1
   * @since 1.0.1
@@ -102,12 +150,12 @@ public class SinglyLinkedList {
   }
   
   /** Generic initialization method
-  * @version 1.0.0
+  * @version 1.0.1
   * @since 1.0.1
   * @param nodeValue Value to set first node to
   */
   public String toString() { // -------------------------------------------------------------------------- O(n)
-    String str = "";
+    String str = "Size: " + size + " :: ";
     SLLNode node = head;
     for (int i = 0;i < size;i++) { // -------------------------------------------------------------------- O(n)
       str += node.value + " ";
@@ -144,5 +192,31 @@ public class SinglyLinkedList {
     System.out.println(sLL.isInList(42));
     sLL.insert(42,0);
     System.out.println(sLL.isInList(42));
+  }
+  public static void Test_Delete() {
+    SinglyLinkedList sLL = new SinglyLinkedList(0);
+    sLL.insert(1,1);
+    sLL.insert(2,2);
+    sLL.insert(3,3);
+    sLL.insert(4,4);
+    System.out.println(sLL.toString());
+    sLL.delete(0);
+    System.out.println(sLL.toString());
+    sLL.delete(sLL.size-1);
+    System.out.println(sLL.toString());
+    sLL.delete(1);
+    System.out.println(sLL.toString());
+    sLL.delete(5);
+    System.out.println(sLL.toString());
+  }
+  public static void Test_DeleteEntireList() {
+    SinglyLinkedList sLL = new SinglyLinkedList(0);
+    sLL.insert(1,1);
+    sLL.insert(2,2);
+    sLL.insert(3,3);
+    sLL.insert(4,4);
+    System.out.println(sLL.toString());
+    sLL.deleteEntireList();
+    System.out.println(sLL.toString());
   }
 }
