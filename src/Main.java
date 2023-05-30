@@ -8,7 +8,6 @@ import projects.*;
 */
 class Main {
   public static void main(String[] args) {
-    SinglyLinkedList SLL = new SinglyLinkedList(300);
-    System.out.println(SLL.head.value);
+    SinglyLinkedList.Test_IsInList();
   }
 }
