@@ -3,7 +3,7 @@ package arrays;
 /** Represents a two dimensional array and all functional implementations
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.1
+* @version 1.0.2
 */
 public class TwoDimensionArray {
   int[][] arr = null; // Declaration --------------------------------------------------------------------- O(1)
@@ -60,6 +60,19 @@ public class TwoDimensionArray {
     }
   }
 
+  /** Traverses array value by value
+  * @version 1.0.0
+  * @since 1.0.2
+  */
+  public void traverseArray() { // ------------------------------------------------------------------------ O(a*b)
+    for (int row = 0;row < arr.length;row++) { // --------------------------------------------------------- O(a*b)
+      for (int column = 0;column < arr[0].length;column++) { // ------------------------------------------- O(b)
+        System.out.print(get(row, column) + " "); // ------------------------------------------------------ O(1)
+      }
+    }
+    System.out.println(""); // ---------------------------------------------------------------------------- O(1)
+  }
+
 
 
 
@@ -90,5 +103,13 @@ public class TwoDimensionArray {
     System.out.println(tda.get(1,0));
     System.out.println(tda.get(0,1));
     System.out.println(tda.get(1,2));
+  }
+  public static void Test_TraverseArray() {
+    TwoDimensionArray tda = new TwoDimensionArray(3,3);
+    tda.insert(0,0,0);
+    tda.insert(1,0,10);
+    tda.insert(0,1,1);
+    tda.insert(1,2,23);
+    tda.traverseArray();
   }
 }
