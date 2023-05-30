@@ -22,8 +22,11 @@ public class ProjectOne {
   double averageTemperature = 0;
   
   /** Initializes project one operations
-  * @version 1.0.0
+  * @version 1.0.1
   * @since 1.0.0
+  * V1.0.1 Changelog:
+  *  - Replaced all `temperatureArray.length` calls with `numberOfTemperatures` for one less step to get value (more optimized?)
+  *  - Combined functionality of two (get temperatures and calculate average) for loops into one (more optimized)
   */
   public ProjectOne() {
     Scanner scanner = new Scanner(System.in);
@@ -32,18 +35,15 @@ public class ProjectOne {
       System.out.print("How many days' temperatures will you be sending?: ");
       numberOfTemperatures = scanner.nextInt();
       temperatureArray = new double[numberOfTemperatures];
-      // Get temperatures
+      // Get temperatures & calculate average
       for (int i = 0;i < numberOfTemperatures;i++) {
         System.out.print("Please enter day " + (i+1) + "'s temperature: ");
         temperatureArray[i] = scanner.nextDouble();
-      }
-      // Calculate average
-      for (int i = 0;i < temperatureArray.length;i++) {
         averageTemperature += temperatureArray[i];
       }
-      averageTemperature /= temperatureArray.length;
+      averageTemperature /= numberOfTemperatures;
       // Calculate days above average
-      for (int i = 0;i < temperatureArray.length;i++) {
+      for (int i = 0;i < numberOfTemperatures;i++) {
         if (temperatureArray[i] > averageTemperature)
           daysAboveAverage++;
       }
