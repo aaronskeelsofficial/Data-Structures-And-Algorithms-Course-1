@@ -20,6 +20,7 @@ public class StripEnds_43 {
   /** Strips an array's first and last elements, returning the middle elements
   * @version 1.0.0
   * @since 1.0.0
+  * @return Middle elements of array, having stripped the first and last
   */
   public int[] Strip() { // ------------------------------------------------------------------------------ O(n)
     // If array has less than 2 elements, return an empty array
