@@ -1,4 +1,5 @@
 import arrays.SingleDimensionArray;
+import arrays.TwoDimensionArray;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -6,6 +7,6 @@ import arrays.SingleDimensionArray;
 */
 class Main {
   public static void main(String[] args) {
-    SingleDimensionArray.Test_Delete();
+    TwoDimensionArray.Test_Insert();
   }
 }
