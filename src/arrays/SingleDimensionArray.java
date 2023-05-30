@@ -70,18 +70,18 @@ public class SingleDimensionArray { // -----------------------------------------
   /** Conduct a linear search for a value within the array
   * @param valueToSearch The value to search for within the array
   * @return Whether or not value is found within the array
-  * @version 1.0.0
+  * @version 1.0.1
   * @since 1.0.3
   */
-  public boolean searchInArray_Linear(int valueToSearch) {
-    for (int i = 0;i < arr.length;i++) {
-      if (get(i) == valueToSearch) {
-        System.out.println(valueToSearch + " was found in array @ index " + i + ".");
-        return true;
+  public boolean searchInArray_Linear(int valueToSearch) { // ---------------------------------------------- O(n)
+    for (int i = 0;i < arr.length;i++) { // ---------------------------------------------------------------- O(n)
+      if (get(i) == valueToSearch) { // -------------------------------------------------------------------- O(1)
+        System.out.println(valueToSearch + " was found in array @ index " + i + "."); // ------------------- O(1)
+        return true; // ------------------------------------------------------------------------------------ O(1)
       }
     }
-    System.out.println(valueToSearch + " was not found in array.");
-    return false;
+    System.out.println(valueToSearch + " was not found in array."); // ------------------------------------- O(1)
+    return false; // --------------------------------------------------------------------------------------- O(1)
   }
 
 
