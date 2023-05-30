@@ -178,48 +178,48 @@ public class CircularSinglyLinkedList {
   *  --------------------------------------------------
   */
   public static void Test_Insert() {
-    SinglyLinkedList sLL = new SinglyLinkedList(300);
-    sLL.insert(1,1);
-    sLL.insert(500,2);
-    System.out.println(sLL.toString());
-    sLL.insert(4,2);
-    System.out.println(sLL.toString());
-    sLL.insert(42,0);
-    System.out.println(sLL.toString());
+    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(300);
+    cSLL.insert(1,1);
+    cSLL.insert(500,2);
+    System.out.println(cSLL.toString());
+    cSLL.insert(4,2);
+    System.out.println(cSLL.toString());
+    cSLL.insert(42,0);
+    System.out.println(cSLL.toString());
   }
   public static void Test_IsInList() {
-    SinglyLinkedList sLL = new SinglyLinkedList(300);
-    sLL.insert(1,1);
-    sLL.insert(500,2);
-    sLL.insert(4,2);
-    System.out.println(sLL.isInList(42));
-    sLL.insert(42,0);
-    System.out.println(sLL.isInList(42));
+    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(300);
+    cSLL.insert(1,1);
+    cSLL.insert(500,2);
+    cSLL.insert(4,2);
+    System.out.println(cSLL.isInList(42));
+    cSLL.insert(42,0);
+    System.out.println(cSLL.isInList(42));
   }
   public static void Test_Delete() {
-    SinglyLinkedList sLL = new SinglyLinkedList(0);
-    sLL.insert(1,1);
-    sLL.insert(2,2);
-    sLL.insert(3,3);
-    sLL.insert(4,4);
-    System.out.println(sLL.toString());
-    sLL.delete(0);
-    System.out.println(sLL.toString());
-    sLL.delete(sLL.size-1);
-    System.out.println(sLL.toString());
-    sLL.delete(1);
-    System.out.println(sLL.toString());
-    sLL.delete(5);
-    System.out.println(sLL.toString());
+    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(0);
+    cSLL.insert(1,1);
+    cSLL.insert(2,2);
+    cSLL.insert(3,3);
+    cSLL.insert(4,4);
+    System.out.println(cSLL.toString());
+    cSLL.delete(0);
+    System.out.println(cSLL.toString());
+    cSLL.delete(cSLL.size-1);
+    System.out.println(cSLL.toString());
+    cSLL.delete(1);
+    System.out.println(cSLL.toString());
+    cSLL.delete(5);
+    System.out.println(cSLL.toString());
   }
   public static void Test_DeleteEntireList() {
-    SinglyLinkedList sLL = new SinglyLinkedList(0);
-    sLL.insert(1,1);
-    sLL.insert(2,2);
-    sLL.insert(3,3);
-    sLL.insert(4,4);
-    System.out.println(sLL.toString());
-    sLL.deleteEntireList();
-    System.out.println(sLL.toString());
+    CircularSinglyLinkedList cSLL = new CircularSinglyLinkedList(0);
+    cSLL.insert(1,1);
+    cSLL.insert(2,2);
+    cSLL.insert(3,3);
+    cSLL.insert(4,4);
+    System.out.println(cSLL.toString());
+    cSLL.deleteEntireList();
+    System.out.println(cSLL.toString());
   }
 }
