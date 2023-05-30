@@ -6,6 +6,6 @@ import arrays.SingleDimensionArray;
 */
 class Main {
   public static void main(String[] args) {
-    SingleDimensionArray.Test_TraverseArray();
+    SingleDimensionArray.Test_SearchInArray_Linear();
   }
 }

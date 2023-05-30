@@ -3,7 +3,7 @@ package arrays;
 /** Represents a single dimensional array and all functional implementations
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.2
+* @version 1.0.3
 */
 public class SingleDimensionArray { // ------------------------------------------------------------------- O(n)
   int[] arr = null; // Declaration ----------------------------------------------------------------------- O(1)
@@ -67,6 +67,23 @@ public class SingleDimensionArray { // -----------------------------------------
     System.out.println(""); // ----------------------------------------------------------------------------- O(1)
   }
 
+  /** Conduct a linear search for a value within the array
+  * @param valueToSearch The value to search for within the array
+  * @return Whether or not value is found within the array
+  * @version 1.0.0
+  * @since 1.0.3
+  */
+  public boolean searchInArray_Linear(int valueToSearch) {
+    for (int i = 0;i < arr.length;i++) {
+      if (get(i) == valueToSearch) {
+        System.out.println(valueToSearch + " was found in array @ index " + i + ".");
+        return true;
+      }
+    }
+    System.out.println(valueToSearch + " was not found in array.");
+    return false;
+  }
+
 
 
 
@@ -86,7 +103,6 @@ public class SingleDimensionArray { // -----------------------------------------
     sda.insert(1,40);
     sda.insert(12,120);
   }
-
   public static void Test_Get() {
     SingleDimensionArray sda = new SingleDimensionArray(10);
     sda.insert(0, 49);
@@ -94,7 +110,6 @@ public class SingleDimensionArray { // -----------------------------------------
     sda.get(1);
     sda.get(12);
   }
-
   public static void Test_TraverseArray() {
     SingleDimensionArray sda = new SingleDimensionArray(10);
     sda.insert(0,0);
@@ -102,5 +117,14 @@ public class SingleDimensionArray { // -----------------------------------------
     sda.insert(2,20);
     sda.insert(3,30);
     sda.traverseArray();
+  }
+  public static void Test_SearchInArray_Linear() {
+    SingleDimensionArray sda = new SingleDimensionArray(10);
+    sda.insert(0,0);
+    sda.insert(1,10);
+    sda.insert(2,20);
+    sda.insert(3,30);
+    sda.searchInArray_Linear(20);
+    sda.searchInArray_Linear(40);
   }
 }
