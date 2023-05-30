@@ -3,7 +3,7 @@ package arrays;
 /** Represents a single dimensional array and all functional implementations
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.0
+* @version 1.0.1
 */
 public class SingleDimensionArray { // ------------------------------------------------------------------- O(n)
   int[] arr = null; // Declaration ----------------------------------------------------------------------- O(1)
@@ -17,10 +17,25 @@ public class SingleDimensionArray { // -----------------------------------------
     // Technically instantiation sets all values to 0 which I see as O(n) but it's allegedly O(1)
     arr = new int[sizeOfArray]; // Instantiation --------------------------------------------------------- O(1)
     for (int i = 0; i < sizeOfArray; i++) { // Initialization -------------------------------------------- O(n)
-      arr[i] = Integer.MIN_VALUE;
+      arr[i] = Integer.MIN_VALUE; // --------------------------------------------------------------------- O(1)
     }
   }
 
+  /** Gets value at a specified index
+  * @param index Target index to get
+  * @version 1.0.0
+  * @since 1.0.1
+  */
+  public int get(int index) { // ------------------------------------------------------------------------- O(1)
+    try { // --------------------------------------------------------------------------------------------- O(1)
+      System.out.println("Getting value at index: " + index + "."); // ----------------------------------- O(1)
+      return arr[index]; // ------------------------------------------------------------------------------ O(1)
+    } catch (ArrayIndexOutOfBoundsException e) { // ------------------------------------------------------ O(1)
+      System.out.println("Invalid array index: " + index + "."); // -------------------------------------- O(1)
+    }
+    return 0; // ----------------------------------------------------------------------------------------- O(1)
+  }
+  
   /** Attempts to insert a value into a specified index
   * @param index Target index to attempt insertion at
   * @param valueToBeInserted Value to attempt to insert
@@ -58,5 +73,13 @@ public class SingleDimensionArray { // -----------------------------------------
     sda.insert(3,30);
     sda.insert(1,40);
     sda.insert(12,120);
+  }
+
+  public static void Test_Get() {
+    SingleDimensionArray sda = new SingleDimensionArray(10);
+    sda.insert(0, 49);
+    sda.get(0);
+    sda.get(1);
+    sda.get(12);
   }
 }
