@@ -23,8 +23,9 @@ public class SingleDimensionArray { // -----------------------------------------
 
   /** Gets value at a specified index
   * @param index Target index to get
-  * @version 1.0.0
+  * @version 1.0.1
   * @since 1.0.1
+  * @return Value at specified index
   */
   public int get(int index) { // ------------------------------------------------------------------------- O(1)
     try { // --------------------------------------------------------------------------------------------- O(1)
