@@ -3,7 +3,7 @@ package arrays;
 /** Represents a two dimensional array and all functional implementations
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.2
+* @version 1.0.3
 */
 public class TwoDimensionArray {
   int[][] arr = null; // Declaration --------------------------------------------------------------------- O(1)
@@ -60,6 +60,25 @@ public class TwoDimensionArray {
     }
   }
 
+  /** Conduct a linear search for if a value is found within the array at all
+  * @param valueToSearch The value to search for within the array
+  * @return Whether or not value is found within the array
+  * @version 1.0.0
+  * @since 1.0.3
+  */
+  public boolean searchInArray_Linear(int valueToSearch) { // ---------------------------------------------- O(a*b)
+    for (int row = 0;row < arr.length;row++) { // ---------------------------------------------------------- O(a*b)
+      for (int column = 0;column < arr[0].length;column++) { // -------------------------------------------- O(b)
+        if (get(row, column) == valueToSearch) { // -------------------------------------------------------- O(1)
+          System.out.println(valueToSearch + " was found in array @ R" + row + "C" + column + "."); // ----- O(1)
+          return true; // ---------------------------------------------------------------------------------- O(1)
+        }
+      }
+    }
+    System.out.println(valueToSearch + " was not found in array."); // ------------------------------------- O(1)
+    return false; // --------------------------------------------------------------------------------------- O(1)
+  }
+  
   /** Traverses array value by value
   * @version 1.0.0
   * @since 1.0.2
@@ -111,5 +130,16 @@ public class TwoDimensionArray {
     tda.insert(0,1,1);
     tda.insert(1,2,23);
     tda.traverseArray();
+  }
+  public static void Test_SearchInArray_Linear() {
+    TwoDimensionArray tda = new TwoDimensionArray(3,3);
+    tda.insert(0,0,1);
+    tda.insert(1,0,10);
+    tda.insert(0,1,1);
+    tda.insert(1,2,23);
+    tda.searchInArray_Linear(10);
+    tda.searchInArray_Linear(23);
+    tda.searchInArray_Linear(1);
+    tda.searchInArray_Linear(2);
   }
 }

@@ -7,6 +7,6 @@ import arrays.TwoDimensionArray;
 */
 class Main {
   public static void main(String[] args) {
-    TwoDimensionArray.Test_TraverseArray();
+    TwoDimensionArray.Test_SearchInArray_Linear();
   }
 }
