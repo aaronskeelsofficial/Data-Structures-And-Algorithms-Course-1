@@ -7,6 +7,6 @@ import arrays.TwoDimensionArray;
 */
 class Main {
   public static void main(String[] args) {
-    TwoDimensionArray.Test_Insert();
+    TwoDimensionArray.Test_Get();
   }
 }

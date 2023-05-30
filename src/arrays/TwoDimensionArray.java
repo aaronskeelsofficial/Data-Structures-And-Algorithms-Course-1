@@ -3,7 +3,7 @@ package arrays;
 /** Represents a two dimensional array and all functional implementations
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.0
+* @version 1.0.1
 */
 public class TwoDimensionArray {
   int[][] arr = null; // Declaration --------------------------------------------------------------------- O(1)
@@ -22,6 +22,22 @@ public class TwoDimensionArray {
         arr[i][j] = Integer.MIN_VALUE; // --------------------------------------------------------------- O(1)
       }
     }
+  }
+
+  /** Gets value at a specified row and column
+  * @param row Target row
+  * @param column Target column
+  * @version 1.0.0
+  * @since 1.0.1
+  * @return Value at specified row and column
+  */
+  public int get(int row, int column) { // ---------------------------------------------------------------- O(1)
+    try { // ---------------------------------------------------------------------------------------------- O(1)
+      return arr[row][column]; // ------------------------------------------------------------------------- O(1)
+    } catch (ArrayIndexOutOfBoundsException e) { // ------------------------------------------------------- O(1)
+      System.out.println("Invalid array index: R" + row + "C" + column + "."); // ------------------------- O(1)
+    }
+    return 0; // ------------------------------------------------------------------------------------------ O(1)
   }
 
   /** Attempts to insert a value into a specified row and column
@@ -63,5 +79,16 @@ public class TwoDimensionArray {
     tda.insert(2,1,32);
     tda.insert(3,0,0);
     tda.insert(0,3,0);
+  }
+  public static void Test_Get() {
+    TwoDimensionArray tda = new TwoDimensionArray(3,3);
+    tda.insert(0,0,0);
+    tda.insert(1,0,10);
+    tda.insert(0,1,1);
+    tda.insert(1,2,23);
+    System.out.println(tda.get(0,0));
+    System.out.println(tda.get(1,0));
+    System.out.println(tda.get(0,1));
+    System.out.println(tda.get(1,2));
   }
 }
