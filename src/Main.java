@@ -7,6 +7,6 @@ import projects.*;
 */
 class Main {
   public static void main(String[] args) {
-    StripEnds_43.Test_Strip();
+    SumDiagonalElements_44.Test_Sum();
   }
 }
