@@ -8,13 +8,13 @@ import java.util.InputMismatchException;
 *  Output:
 *   - Average Temp
 *   - How many days were above the average
-*  Code To Execute: `new ProjectOne();`
+*  Code To Execute: `ProjectOne.Test();`
 */
 
 /** Represents class for running project one
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.0
+* @version 1.0.1
 */
 public class ProjectOne {
   double[] temperatureArray;
@@ -54,5 +54,19 @@ public class ProjectOne {
       //TODO - Split try catch into separate integer/double explanations
       System.out.println("You must enter only a number.");
     }
+  }
+
+
+
+
+
+  /* --------------------------------------------------
+  *  - TEST METHODS
+  *  - Purpose: All following methods were used to test functionality implementations.
+  *     They will have no documentation. Probably ignore.
+  *  --------------------------------------------------
+  */
+  public static void Test() {
+    new ProjectOne();
   }
 }
