@@ -3,7 +3,7 @@ package arrays;
 /** Represents a two dimensional array and all functional implementations
 * @author Aaron Skeels
 * @author aaronskeels.work/
-* @version 1.0.3
+* @version 1.0.4
 */
 public class TwoDimensionArray {
   int[][] arr = null; // Declaration --------------------------------------------------------------------- O(1)
@@ -21,6 +21,21 @@ public class TwoDimensionArray {
       for (int j = 0;j < numberOfColumns;j++) { // ------------------------------------------------------ O(b)
         arr[i][j] = Integer.MIN_VALUE; // --------------------------------------------------------------- O(1)
       }
+    }
+  }
+
+  /** Delete a value from the specified index
+  * @param row Row at which to delete value
+  * @param column Column at which to delete value
+  * @version 1.0.0
+  * @since 1.0.4
+  */
+  public void delete(int row, int column) { // ------------------------------------------------------------ O(1)
+    try { // ---------------------------------------------------------------------------------------------- O(1)
+      arr[row][column] = Integer.MIN_VALUE; // ------------------------------------------------------------ O(1)
+      System.out.println("R" + row + "C" + column + " deleted successfully."); // ------------------------- O(1)
+    } catch (ArrayIndexOutOfBoundsException e) { // ------------------------------------------------------- O(1)
+      System.out.println("Invalid array index: R" + row + "C" + column + "."); // ------------------------- O(1)
     }
   }
 
@@ -141,5 +156,12 @@ public class TwoDimensionArray {
     tda.searchInArray_Linear(23);
     tda.searchInArray_Linear(1);
     tda.searchInArray_Linear(2);
+  }
+  public static void Test_Delete() {
+    TwoDimensionArray tda = new TwoDimensionArray(3,3);
+    tda.insert(1,0,10);
+    tda.searchInArray_Linear(10);
+    tda.delete(1,0);
+    tda.searchInArray_Linear(10);
   }
 }
