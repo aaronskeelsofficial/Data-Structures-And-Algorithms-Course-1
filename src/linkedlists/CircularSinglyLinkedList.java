@@ -107,6 +107,7 @@ public class CircularSinglyLinkedList {
     //Insert node as head if no head
     if (size == 0) {
       initializeLinkedList(nodeValue); // ---------------------------------------------------------------- O(1)
+      return;
     }
     
     //Insert node expecting already present nodes
