@@ -26,7 +26,7 @@ public class DoublyLinkedList {
     initializeLinkedList(nodeValue);
   }
 
-  /** Deletes an index from a singly linked list
+  /** Deletes an index from a doubly linked list
   * @version 1.0.0
   * @since 1.0.0
   * @param index Index to be deleted
@@ -66,7 +66,7 @@ public class DoublyLinkedList {
     size--;
   }
 
-  /** Deletes entire singly linked list
+  /** Deletes entire doubly linked list
   * @version 1.0.0
   * @since 1.0.0
   */
@@ -136,7 +136,7 @@ public class DoublyLinkedList {
     size++;
   }
 
-  /** Deduce if a value is present anywhere in the singly linked list
+  /** Deduce if a value is present anywhere in the doubly linked list
   * @version 1.0.0
   * @since 1.0.0
   * @param nodeValue Value to set the new node to
@@ -174,7 +174,7 @@ public class DoublyLinkedList {
   * @version 1.0.0
   * @since 1.0.0
   */
-  public String deepToString() {
+  public String deepToString() { // ---------------------------------------------------------------------- O(n)
     String str = "Size: " + size + "\n";
     DLLNode node = head;
     for (int i = 0;i < size;i++) { // -------------------------------------------------------------------- O(n)
