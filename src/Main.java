@@ -1,6 +1,7 @@
 import arrays.*;
 import linkedlists.*;
 import projects.*;
+import stacks.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -8,12 +9,12 @@ import projects.*;
 */
 class Main {
   public static void main(String[] args) {
-    CircularDoublyLinkedList.Test_Insert();
-    System.out.println("\n-----------\n");
-    CircularDoublyLinkedList.Test_IsInList();
-    System.out.println("\n-----------\n");
-    CircularDoublyLinkedList.Test_Delete();
-    System.out.println("\n-----------\n");
-    CircularDoublyLinkedList.Test_DeleteEntireList();
+    StackArray.Test_Push();
+    System.out.println("\n --------------- \n");
+    StackArray.Test_Delete();
+    System.out.println("\n --------------- \n");
+    StackArray.Test_Peek();
+    System.out.println("\n --------------- \n");
+    StackArray.Test_Pop();
   }
 }
