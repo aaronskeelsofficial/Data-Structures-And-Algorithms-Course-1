@@ -8,6 +8,7 @@ package src.linkedlists;
 *    I have confidence I could implement those feature easily, but this is so basic and I'm only 25% through the
 *    course after ~20 hours input, so I have a LOT of other structures and algorithms to learn about.
 * ------------------------------
+*/
 
 /** Represents a circular doubly linked list implementation
 * @author Aaron Skeels
