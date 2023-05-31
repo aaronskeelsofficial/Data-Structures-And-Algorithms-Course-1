@@ -1,4 +1,4 @@
-package projects;
+package src.projects;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 

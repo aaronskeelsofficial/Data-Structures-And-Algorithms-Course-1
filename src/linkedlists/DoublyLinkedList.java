@@ -1,4 +1,4 @@
-package linkedlists;
+package src.linkedlists;
 
 /*------------------------------
 * - Note from author:

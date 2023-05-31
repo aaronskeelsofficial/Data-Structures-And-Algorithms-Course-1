@@ -1,5 +1,5 @@
-cd src
+#cd src
 echo "Compiling..."
-javac ./Main.java
+javac src/Main.java
 echo "Executing..."
-java -cp . Main
+java -cp . src/Main

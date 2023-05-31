@@ -1,4 +1,4 @@
-package arrays;
+package src.arrays;
 
 /** Represents a single dimensional array and all functional implementations
 * @author Aaron Skeels

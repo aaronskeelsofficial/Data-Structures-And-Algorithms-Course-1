@@ -1,7 +1,8 @@
-import arrays.*;
-import linkedlists.*;
-import projects.*;
-import stacks.*;
+package src;
+import src.arrays.*;
+import src.linkedlists.*;
+import src.projects.*;
+import src.stacks.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -9,12 +10,12 @@ import stacks.*;
 */
 class Main {
   public static void main(String[] args) {
-    StackArray.Test_Push();
+    StackSinglyLinkedList.Test_Push();
     System.out.println("\n --------------- \n");
-    StackArray.Test_Delete();
+    StackSinglyLinkedList.Test_Delete();
     System.out.println("\n --------------- \n");
-    StackArray.Test_Peek();
+    StackSinglyLinkedList.Test_Peek();
     System.out.println("\n --------------- \n");
-    StackArray.Test_Pop();
+    StackSinglyLinkedList.Test_Pop();
   }
 }

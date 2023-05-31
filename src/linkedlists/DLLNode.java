@@ -1,4 +1,4 @@
-package linkedlists;
+package src.linkedlists;
 
 /** Represents a node utilized by a doubly linked list
 * @author Aaron Skeels

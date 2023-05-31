@@ -1,4 +1,4 @@
-package arrays;
+package src.arrays;
 import java.util.Arrays;
 
 /** Represents strip ends class which strips an array's first and last elements, returning the middle elements

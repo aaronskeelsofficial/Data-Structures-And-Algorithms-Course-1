@@ -1,4 +1,4 @@
-package arrays;
+package src.arrays;
 
 /** Represents sum diagonal elements class which sums an array's diagonal elements
 * @author Aaron Skeels
