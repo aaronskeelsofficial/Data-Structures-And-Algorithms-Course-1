@@ -1,5 +1,14 @@
 package linkedlists;
 
+/*------------------------------
+* - Note from author:
+*    I am well aware that this class is missing very basic functionality associated with such a type of object.
+*    Things that immediately come to mind are push, pop, get, rotate, set, etc.
+*    I only was following the functionality asked for by the course, and not adventuring further.
+*    I have confidence I could implement those feature easily, but this is so basic and I'm only 25% through the
+*    course after ~20 hours input, so I have a LOT of other structures and algorithms to learn about.
+* ------------------------------
+
 /** Represents a singly linked list implementation
 * @author Aaron Skeels
 * @author aaronskeels.work/
