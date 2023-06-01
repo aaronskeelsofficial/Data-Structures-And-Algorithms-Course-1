@@ -1,7 +1,9 @@
 package src;
 import src.arrays.*;
+import src.errorexemplification.*;
 import src.linkedlists.*;
 import src.projects.*;
+import src.queues.*;
 import src.stacks.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
@@ -10,12 +12,12 @@ import src.stacks.*;
 */
 class Main {
   public static void main(String[] args) {
-    StackSinglyLinkedList.Test_Push();
+    QueueSinglyLinkedList.Test_Enqueue();
     System.out.println("\n --------------- \n");
-    StackSinglyLinkedList.Test_Delete();
+    QueueSinglyLinkedList.Test_Delete();
     System.out.println("\n --------------- \n");
-    StackSinglyLinkedList.Test_Peek();
+    QueueSinglyLinkedList.Test_Peek();
     System.out.println("\n --------------- \n");
-    StackSinglyLinkedList.Test_Pop();
+    QueueSinglyLinkedList.Test_Dequeue();
   }
 }
