@@ -5,6 +5,7 @@ import src.projects.*;
 import src.queues.*;
 import src.recursion.*;
 import src.stacks.*;
+import src.trees.basictree.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -12,6 +13,6 @@ import src.stacks.*;
 */
 class Main {
   public static void main(String[] args) {
-    Fibonacci.Test_Fib();
+    BasicTreeNode.Test_TestOne();
   }
 }
