@@ -1,5 +1,12 @@
 package src.recursion;
 
+/*------------------------------
+* - Note from author:
+*    This file in particular is a throwaway to explore the underworkings of a lesson.
+*    Ignore.
+* ------------------------------
+*/
+
 public class Fibonacci {
   private Fibonacci() { 
   }
