@@ -48,7 +48,7 @@ public class BinaryTreeArr<T> {
   * @version 1.0.0
   * @since 1.0.0
   */
-  public void deleteTree() {
+  public void deleteTree() { // --------------------------------------------------------------------------- O(1)
     arr = new Object[arr.length];
     lastUsedIndex = 0;
   }
@@ -57,8 +57,8 @@ public class BinaryTreeArr<T> {
   * @since 1.0.0
   * @param value Value to be deleted
   */
-  public void levelDelete(T value) {
-    levelDelete(1, value);
+  public void levelDelete(T value) { // -------------------------------------------------------------------- O(n)
+    levelDelete(1, value); // ------------------------------------------------------------------------------ O(n)
   }
   /** Deletes first occurrence of value by conducting a level search for the target value, swapping the last element value to the target element value, and then removing the last element from the tree
   * @version 1.0.0
@@ -66,7 +66,7 @@ public class BinaryTreeArr<T> {
   * @param node Node to treat as root node for search initialization
   * @param value Value to be deleted
   */
-  public void levelDelete(int nodeIndex, T value) {
+  public void levelDelete(int nodeIndex, T value) { // ------------------------------------------------------ O(n)
     /* Note 1: This delete method functionality is kinda odd to me and throws heirarchy out the window
     *  Essentially the instructor said to copy deepest node's value to the to-be-deleted node's location
     *  and then delete the deeper node. I don't see what structural utility atm that servers but whatever.
@@ -78,7 +78,7 @@ public class BinaryTreeArr<T> {
     *  deduction. -1 points for the course's reputation.
     */
 
-    int foundIndex = levelSearch(value);
+    int foundIndex = levelSearch(value); // ----------------------------------------------------------------- O(n)
     if (foundIndex == -1)
       return;
     arr[foundIndex] = arr[lastUsedIndex];
@@ -108,7 +108,7 @@ public class BinaryTreeArr<T> {
   * @since 1.0.0
   * @param value Target Value
   */
-  public int levelSearch(T value) {
+  public int levelSearch(T value) { // ------------------------------------------------------------------------ O(n)
     return levelSearch(1, value);
   }
   /** Attempts to retrieve the first occurrence of a node with target value using level search philosophy
@@ -117,7 +117,7 @@ public class BinaryTreeArr<T> {
   * @param node Node to treat as root for search initialization
   * @param value Target Value
   */
-  public int levelSearch (int nodeIndex, T value) {
+  public int levelSearch (int nodeIndex, T value) { // -------------------------------------------------------- O(n)
     for (int i = nodeIndex;i <= lastUsedIndex;i++) { // ------------------------------------------------------- O(n)
       if (arr[i] == value)
         return i;
