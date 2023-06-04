@@ -6,6 +6,7 @@ import src.queues.*;
 import src.recursion.*;
 import src.stacks.*;
 import src.trees.binarytreelinkedlist.*;
+import src.trees.binarytreearray.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -13,15 +14,13 @@ import src.trees.binarytreelinkedlist.*;
 */
 class Main {
   public static void main(String[] args) {
-    BinaryTreeLL.Test_Traversal();
+    BinaryTreeArr.Test_Insert();
     System.out.println("\n----------\n");
-    BinaryTreeLL.Test_Search();
+    BinaryTreeArr.Test_Traversal();
     System.out.println("\n----------\n");
-    BinaryTreeLL.Test_Insert();
+    BinaryTreeArr.Test_Search();
     System.out.println("\n----------\n");
-    BinaryTreeLL.Test_ToString();
-    System.out.println("\n----------\n");
-    BinaryTreeLL.Test_Delete();
+    BinaryTreeArr.Test_Delete();
     System.out.println("\n----------\n");
   }
 }
