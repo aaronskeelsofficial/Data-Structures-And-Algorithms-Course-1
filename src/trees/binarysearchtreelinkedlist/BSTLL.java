@@ -112,6 +112,13 @@ public class BSTLL<T extends Comparable<T>> {
         prevLeftmostNode.left = leftmostNode.right; // Pray for garbage collector 🙏
         return;
       }
+      //Set leftmostNode into foundNode spot
+      if (prevNode.left == foundNode)
+        prevNode.left = leftmostNode;
+      else if (prevNode.right == foundNode)
+        prevNode.right = leftmostNode;
+      leftmostNode.left = foundNode.left;
+      leftmostNode.right = foundNode.right;
     }
   }
 
