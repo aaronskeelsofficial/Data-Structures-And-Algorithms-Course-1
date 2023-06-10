@@ -8,6 +8,8 @@ import src.stacks.*;
 import src.trees.binarytreelinkedlist.*;
 import src.trees.binarytreearray.*;
 import src.trees.binarysearchtreelinkedlist.*;
+import src.trees.avltreelinkedlist.*;
+import src.trees.binaryheaparray.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -15,11 +17,9 @@ import src.trees.binarysearchtreelinkedlist.*;
 */
 class Main {
   public static void main(String[] args) {
-    // BSTLL.Test_Insert();
-    // System.out.println("\n----------\n");
-    // BSTLL.Test_Search();
-    // System.out.println("\n----------\n");
-    BSTLL.Test_JavaSyntax();
-    System.out.println("\n----------\n");
+    BinaryHeapArr.Test_InsertMin();
+    System.out.println("\n---------\n");
+    BinaryHeapArr.Test_ExtractMin();
+    System.out.println("\n---------\n");
   }
 }
