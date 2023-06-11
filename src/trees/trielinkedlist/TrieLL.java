@@ -8,7 +8,7 @@ public class TrieLL {
     root = new TrieNode();
   }
 
-  public void delete(String s) {
+  public void delete(String s) { // ---------------------------------------------------------------------------------- O(stringLength)
     // Step 1. Step through nodes until end of string
     ArrayList<TrieNode> nodeTrail = new ArrayList<>();
     TrieNode curNode = root;
@@ -31,7 +31,7 @@ public class TrieLL {
     // Step 3. Reverse backwards through node chain deleting each node which doesn't have any other children until children are present
     int nodeTrailLength = nodeTrail.size(); // Separated this from for loop for time complexity annotation ----------- O(1)
     TrieNode parentNode = null;
-    for (int i = nodeTrailLength-1;i >= 0;i--) {
+    for (int i = nodeTrailLength-1;i >= 0;i--) { // ------------------------------------------------------------------ O(stringLength)
       curNode = nodeTrail.get(i);
       parentNode = (i != 0) ? nodeTrail.get(i-1) : null; // ---------------------------------------------------------- O(1)
       if (parentNode == null) { // This means curNode is root
@@ -47,11 +47,11 @@ public class TrieLL {
     }
   }
 
-  public TrieNode insert(String s) {
+  public TrieNode insert(String s) { // ------------------------------------------------------------------------------ O(stringLength)
     // Step 1. Loop through string, adding if necessary
     TrieNode curNode = root;
     int stringLength = s.length(); // Separated this from for loop for time complexity annotation -------------------- O(1)
-    for (int i = 0;i < stringLength;i++) {
+    for (int i = 0;i < stringLength;i++) { // ------------------------------------------------------------------------ O(stringLength)
       char c = s.charAt(i); // --------------------------------------------------------------------------------------- O(1)
       if(curNode.children.containsKey(c)) { // ----------------------------------------------------------------------- O(1)
         curNode = curNode.children.get(c); // ----------------------------------------------------------------------- ~O(1)
@@ -68,10 +68,10 @@ public class TrieLL {
     return curNode;
   }
 
-  public boolean searchExact(String s) {
+  public boolean searchExact(String s) { // -------------------------------------------------------------------------- O(stringLength)
     TrieNode curNode = root;
     int stringLength = s.length(); // Separated this from for loop for time complexity annotation -------------------- O(1)
-    for (int i = 0;i < stringLength;i++) {
+    for (int i = 0;i < stringLength;i++) { // ------------------------------------------------------------------------ O(stringLength)
       char c = s.charAt(i); // --------------------------------------------------------------------------------------- O(1)
       if (curNode.children.containsKey(c) && i < stringLength-1) { // ------------------------------------------------ O(1)
         curNode = curNode.children.get(c); // ----------------------------------------------------------------------- ~O(1)
