@@ -12,6 +12,7 @@ import src.trees.avltreelinkedlist.*;
 import src.trees.binaryheaparray.*;
 import src.trees.trielinkedlist.*;
 import src.hashes.directchaining.*;
+import src.hashes.openaddressing.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -19,11 +20,9 @@ import src.hashes.directchaining.*;
 */
 class Main {
   public static void main(String[] args) {
-    DirectChainArr.Test_Insert();
+    LinearProbing.Test_Insert();
     System.out.println("\n---------\n");
-    DirectChainArr.Test_Search();
-    System.out.println("\n---------\n");
-    DirectChainArr.Test_Delete();
+    LinearProbing.Test_Delete();
     System.out.println("\n---------\n");
   }
 }
