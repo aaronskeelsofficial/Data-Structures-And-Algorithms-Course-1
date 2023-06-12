@@ -22,7 +22,7 @@ Order of Prominent Classes Worked On:
 11. stacks/StackArray.java - Stack (Array Implementation)
 12. queues/RotaryQueueArray.java - "Made Up" Fundamental Type of Queue (insert yields full rotation of other elements)
 13. queues/LinearQueueArray.java - Linear Queue (can only be run through left -> right once)
-14. queues/CircularQueueArray.java - Circular Queue (endpoint indices rotate around data)
+14. queues/CircularQueueArray.java - Circular Queue (start/end indices rotate around data, GENIUS iteration on basic array)
 15. queues/QueueSinglyLinkedList.java - Queue (Singly Linked List Implementation)
 16. trees/basictree/BasicTreeNode.java - Basic Binary Tree Node
 17. trees/binarytreelinkedlist/BinaryNode.java - Binary Tree Node (Linked List Implementation)
@@ -33,4 +33,12 @@ Order of Prominent Classes Worked On:
 22. trees/avltreelinkedlist/AVLNode.java - AVL Tree Node (Linked List Implementation)
 23. trees/avltreelinkedlist/AVLLL.java - AVL Tree (Linked List Implementation)
 24. trees/avltreelinkedlist/Direction.java - Custom Enum
-25. trees/binaryheaparray/BinaryHeapArr.java
+25. trees/binaryheaparray/BinaryHeapArr.java - Binary Heap (Array Implementation)
+26. trees/binaryheaparray/BinaryHeapType.java - Custom Enum
+27. trees/trielinkedlist/TrieNode.java - Trie Node
+28. trees/trielinkedlist/TrieLL.java - Trie (Linked List Implementation)
+29. hashes/directchaining/DirectChaining.java - Direct Chaining Hash Table
+30. hashes/openaddressing/LinearProbing.java - Linear Probing Hash Table (victim to infinite loop if arithmetic constant isn't relatively prime to table size)
+31. hashes/openaddressing/QuadraticProbing.java - I refuse to believe this idea makes sense. Pretend it doesn't exist.
+32. hashes/openaddressing/DoubleHashing.java - Double Hashing Hash Table (victim to infinite loop w/o prime table size)
+33. sortingalgos/BubbleSort.java - Bubble Sort
