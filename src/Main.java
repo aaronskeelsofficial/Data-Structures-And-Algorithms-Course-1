@@ -13,6 +13,7 @@ import src.trees.binaryheaparray.*;
 import src.trees.trielinkedlist.*;
 import src.hashes.directchaining.*;
 import src.hashes.openaddressing.*;
+import src.sortingalgos.*;
 
 /** Main is used as a dynamic kickoff point of code. Referencing active code at each commit is pointless.
 * @author Aaron Skeels
@@ -20,9 +21,21 @@ import src.hashes.openaddressing.*;
 */
 class Main {
   public static void main(String[] args) {
-    LinearProbing.Test_Insert();
-    System.out.println("\n---------\n");
-    LinearProbing.Test_Delete();
-    System.out.println("\n---------\n");
+    BubbleSort.Test_Sort();
+    System.out.println("\n-----\n");
+    BucketSort.Test_Sort();
+    System.out.println("\n-----\n");
+    InsertionSort.Test_Sort();
+    System.out.println("\n-----\n");
+    MergeSort.Test_Sort();
+    System.out.println("\n-----\n");
+    MergeSortIterative.Test_Sort();
+    System.out.println("\n-----\n");
+    QuickSort.Test_Sort();
+    System.out.println("\n-----\n");
+    SelectionSort.Test_Sort();
+    System.out.println("\n-----\n");
+    HeapSort.Test_Sort();
+    System.out.println("\n-----\n");
   }
 }

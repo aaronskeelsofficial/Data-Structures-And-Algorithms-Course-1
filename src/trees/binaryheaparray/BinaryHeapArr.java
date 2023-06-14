@@ -34,10 +34,12 @@ public class BinaryHeapArr <T extends Comparable<T>> {
     int rChildIndex = getRightChildIndex(parentIndex); // ------------------------------------------------------- O(1)
     T rChildValue = (T) arr[rChildIndex];
     int childIndex = 0;
-    if ((lChildValue.compareTo(rChildValue) < 0 && type.equals(BinaryHeapType.MINIMUM)) ||
+    if (rChildValue == null ||
+        (lChildValue.compareTo(rChildValue) < 0 && type.equals(BinaryHeapType.MINIMUM)) ||
         (lChildValue.compareTo(rChildValue) > 0 && type.equals(BinaryHeapType.MAXIMUM)))
       childIndex = lChildIndex;
-    else if ((lChildValue.compareTo(rChildValue) < 0 && type.equals(BinaryHeapType.MAXIMUM)) ||
+    else if (lChildValue == null ||
+        (lChildValue.compareTo(rChildValue) < 0 && type.equals(BinaryHeapType.MAXIMUM)) ||
         (lChildValue.compareTo(rChildValue) > 0 && type.equals(BinaryHeapType.MINIMUM)))
       childIndex = rChildIndex;
     T childValue = (T) arr[childIndex];
@@ -79,7 +81,7 @@ public class BinaryHeapArr <T extends Comparable<T>> {
         childValue = (T) arr[childIndex];
       }
     }
-    return null;
+    return rootValue;
   }
 
   public int getLeftChildIndex(int parentIndex) { // ----------------------------------------------------------- O(1)
