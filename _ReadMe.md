@@ -42,3 +42,19 @@ Order of Prominent Classes Worked On:
 31. hashes/openaddressing/QuadraticProbing.java - I refuse to believe this idea makes sense. Pretend it doesn't exist.
 32. hashes/openaddressing/DoubleHashing.java - Double Hashing Hash Table (victim to infinite loop w/o prime table size)
 33. sortingalgos/BubbleSort.java - Bubble Sort
+34. sortingalgos/SelectionSort.java - Selection Sort
+35. sortingalgos/InsertionSort.java - Insertion Sort
+36. sortingalgos/BucketSort.java - Bucket Sort (aka split and use *another* sorting algorithm)
+37. sortingalgos/MergeSort.java - Merge Sort (Recursive implementation commonly known)
+38. sortingalgos/MergeSortIterative.java - Merge Sort (Custom coded from scratch iterative implementation to help me understand time complexity)
+39. sortingalgos/MergeSortComparison.java - Used to compare my custom iterative implementation vs the course provided recursive one.
+40. sortingalgos/QuickSort.java - Quick Sort
+41. sortingalgos/HeapSort.java - Heap Sort
+42. searchingalgos/LinearSearch.java - Linear Search
+43. searchingalgos/BinarySearch.java - Binary Search
+44. graphs/array/GraphNode.java - Unweighted Graph Node (Array Implementation)
+45. graphs/array/GraphArr.java - Unweighted Graph (Array Implementation)
+46. graphs/linkedlist/GraphNode.java - Unweighted Graph Node (Linked List Implementation)
+47. graphs/linkedlist/GraphLL.java - Unweighted Graph (Linked List Implementation)
+48. graphs/linkedlist/PosWeightedGraphNode.java - Positively Weighted Graph Node (Linked List Implementation)
+49. graphs/linkedlist/PosWeightedGraph.java - Positively Weighted Graph (Linked List Implementation)
